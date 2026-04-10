@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -307,7 +307,7 @@ const CourseManager: React.FC<CourseManagerProps> = ({ teacherData, onCoursesCha
     }
   }
 
-  const deleteSlot = async (slotId: string, courseId: string) => {
+  const deleteSlot = async (slotId: string, _courseId: string) => {
     setActionLoading(slotId)
     try {
       const { error } = await supabase.from('class_schedule').delete().eq('id', slotId)

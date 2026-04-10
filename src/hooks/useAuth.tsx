@@ -81,17 +81,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       // Retry up to 5x — profile insert may lag slightly behind auth when
       // email confirmation is disabled and the session fires immediately
-      const data = await retryFetch(() =>
-        supabase
+      const data = await retryFetch(async () => {
+        const { data, error } = await supabase
           .from('user_profiles')
           .select('*')
           .eq('user_id', userId)
           .single()
-          .then(({ data, error }) => {
-            if (error) throw error
-            return data
-          })
-      )
+        if (error) throw error
+        return data
+      })
       setProfile(data)
     } catch (err) {
       // Profile genuinely missing — user may have signed up via Supabase
