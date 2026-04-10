@@ -3,7 +3,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { Button } from '@/components/ui/button'
 import AttendanceOverview from '@/components/student/AttendanceOverview'
 import TeacherSchedule from '@/components/teacher/TeacherSchedule'
-import { QrCode, LogOut, GraduationCap, BookOpen } from 'lucide-react'
+import { LogOut, GraduationCap, BookOpen } from 'lucide-react'
 
 const Dashboard: React.FC = () => {
   const { profile, signOut } = useAuth()
