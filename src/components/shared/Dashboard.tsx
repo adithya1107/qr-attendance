@@ -53,16 +53,13 @@ const Dashboard: React.FC = () => {
             <div className="flex items-center gap-2.5 sm:gap-3">
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 bg-indigo-500/20 blur-lg rounded-xl" />
-                <div className="relative bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl p-2 sm:p-2.5">
-                  <QrCode className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
-                </div>
               </div>
               <div className="hidden xs:block">
                 <h1 className="font-bold text-base sm:text-lg leading-none text-white">QR Attendance</h1>
                 <p className="text-xs text-zinc-500 leading-none mt-0.5">{roleConfig.label}</p>
               </div>
               <div className="xs:hidden">
-                <h1 className="font-bold text-base leading-none text-white">QR Attend.</h1>
+                <h1 className="font-bold text-base leading-none text-white">Attendance Portal</h1>
               </div>
             </div>
 
@@ -70,9 +67,6 @@ const Dashboard: React.FC = () => {
             <div className="flex items-center gap-2 sm:gap-3">
               {/* User info — hidden on very small screens */}
               <div className="hidden sm:flex items-center gap-2.5">
-                <div className={`rounded-full p-1.5 ${roleConfig.bg}`}>
-                  <roleConfig.icon className={`h-3.5 w-3.5 ${roleConfig.color}`} />
-                </div>
                 <div>
                   <p className="text-sm font-medium leading-none text-white">
                     {profile.first_name} {profile.last_name}
